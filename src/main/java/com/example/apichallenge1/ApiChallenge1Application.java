@@ -21,19 +21,9 @@ public class ApiChallenge1Application  {
 
 
 
-    @GetMapping("/all/{field}")
-    private APIResponse<List<WikiEntity>> getWiki(@PathVariable String field){
-        List<WikiEntity> allWiki = wikiController.findWikiWithSorting(field);
-        return new APIResponse<>(allWiki.size(), allWiki);
 
-    }
 
-    @GetMapping("/all/pagination/{pageSize}/{offset}")
-    private APIResponse<Page<WikiEntity>> getWiki(@PathVariable int pageSize, @PathVariable int offset){
-        Page<WikiEntity> allWikiWithPagination = wikiController.findWikiWithPagination(pageSize, offset);
-        return new APIResponse<>(allWikiWithPagination.getSize(), allWikiWithPagination);
 
-    }
 
 
     public static void main(String[] args) {
